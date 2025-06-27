@@ -1,70 +1,195 @@
-# Getting Started with Create React App
+# Adam & Rebecca's Wedding Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A beautiful, responsive wedding website built with React and Firebase Hosting.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- **Responsive Design**: Works perfectly on desktop, tablet, and mobile
+- **Navigation**: Clean navbar with Home, FAQs, and Contact pages
+- **Interactive FAQs**: Expandable accordion-style FAQ section
+- **Contact Form**: Functional contact form with validation
+- **Modern UI**: Elegant design with smooth animations
+- **Fast Loading**: Optimized for performance
 
-### `npm start`
+## 📋 Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Before running this project, make sure you have the following installed:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Node.js** (version 14 or higher)
+- **npm** (comes with Node.js)
+- **Firebase CLI** (for deployment)
 
-### `npm test`
+## 🛠️ Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Clone the repository** (if you haven't already):
 
-### `npm run build`
+   ```bash
+   git clone <your-repository-url>
+   cd wedding-website
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🏃‍♂️ Running Locally
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Development Mode
 
-### `npm run eject`
+To run the app in development mode:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This will:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Start the development server
+- Open [http://localhost:3000](http://localhost:3000) in your browser
+- Enable hot reloading (changes appear instantly)
+- Show lint errors in the console
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Production Build (Local Testing)
 
-## Learn More
+To test the production build locally:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+# Build the app
+npm run build
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Serve the build folder locally
+npx serve -s build
+```
 
-### Code Splitting
+This will serve your optimized production build at `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🚀 Deployment with Firebase
 
-### Analyzing the Bundle Size
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. **Install Firebase CLI** (if not already installed):
 
-### Making a Progressive Web App
+   ```bash
+   npm install -g firebase-tools
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. **Login to Firebase**:
+   ```bash
+   firebase login
+   ```
 
-### Advanced Configuration
+### Deploy to Firebase Hosting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. **Build the production version**:
 
-### Deployment
+   ```bash
+   npm run build
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+2. **Deploy to Firebase Hosting**:
 
-### `npm run build` fails to minify
+   ```bash
+   firebase deploy --only hosting
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. **Access your live website**:
+   - Firebase will provide you with a URL (usually `https://your-project-id.web.app`)
+   - You can also set up a custom domain in the Firebase Console
+
+### Deployment Commands Reference
+
+```bash
+# Build and deploy in one command
+npm run build && firebase deploy --only hosting
+
+# Deploy only hosting (if you've already built)
+firebase deploy --only hosting
+
+# Deploy everything (hosting, functions, firestore)
+firebase deploy
+
+# View deployment status
+firebase hosting:list
+```
+
+## 📁 Project Structure
+
+```
+wedding-website/
+├── public/                 # Static files
+├── src/
+│   ├── components/         # Reusable components
+│   │   ├── Navbar.js      # Navigation component
+│   │   └── Navbar.css     # Navbar styles
+│   │   ├── Home.js        # Home page
+│   │   ├── Home.css       # Home page styles
+│   │   ├── FAQs.js        # FAQ page
+│   │   ├── FAQs.css       # FAQ page styles
+│   │   ├── Contact.js     # Contact page
+│   │   └── Contact.css    # Contact page styles
+│   ├── App.js             # Main app component
+│   ├── App.css            # App styles
+│   └── index.js           # App entry point
+├── firebase.json          # Firebase configuration
+└── package.json           # Dependencies and scripts
+```
+
+## 🎨 Customization
+
+### Updating Content
+
+- **Home Page**: Edit `src/pages/Home.js` for the main content
+- **FAQs**: Modify the `faqData` array in `src/pages/FAQs.js`
+- **Contact Info**: Update contact details in `src/pages/Contact.js`
+- **Styling**: Modify CSS files in respective component folders
+
+### Changing Colors/Themes
+
+The main color scheme uses purple/blue gradients. To change:
+
+- Primary color: `#8e44ad` (purple)
+- Secondary color: `#667eea` (blue)
+- Update these values in the CSS files
+
+## 🔧 Available Scripts
+
+- `npm start` - Run development server
+- `npm run build` - Create production build
+- `npm test` - Run tests
+- `npm run eject` - Eject from Create React App (not recommended)
+
+## 🌐 Firebase Configuration
+
+The project is configured for Firebase Hosting with:
+
+- **Public directory**: `build`
+- **Single-page app routing**: All routes redirect to `index.html`
+- **Caching**: Optimized for performance
+
+## 📱 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+## 🤝 Contributing
+
+1. Make your changes
+2. Test locally with `npm start`
+3. Build and test production with `npm run build`
+4. Deploy with `firebase deploy --only hosting`
+
+## 📞 Support
+
+For questions or issues:
+
+- Check the Firebase Console for deployment status
+- Review the browser console for any errors
+- Ensure all dependencies are installed with `npm install`
+
+---
+
+**Happy Wedding Planning! 💒**
