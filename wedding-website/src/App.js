@@ -6,6 +6,7 @@ import Contact from "./pages/Contact";
 import FAQs from "./pages/FAQs";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
+import RSVP from "./pages/RSVP";
 import React from "react";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/rsvp" element={<RSVP />} />
         </Routes>
       </div>
     </Router>

@@ -46,6 +46,16 @@ function Navbar() {
               Contact
             </Link>
           </li>
+          <li className="navbar-item">
+            <Link
+              to="/rsvp"
+              className={`navbar-link ${
+                location.pathname === "/rsvp" ? "active" : ""
+              }`}
+            >
+              RSVP
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
