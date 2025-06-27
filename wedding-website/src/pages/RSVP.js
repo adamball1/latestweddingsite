@@ -150,23 +150,6 @@ function RSVP() {
           {formData.attending === "yes" && (
             <>
               <div className="form-group">
-                <label htmlFor="guestCount">Number of Guests</label>
-                <select
-                  id="guestCount"
-                  name="guestCount"
-                  value={formData.guestCount}
-                  onChange={handleChange}
-                  disabled={isSubmitting}
-                >
-                  <option value="">Select number of guests</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-              </div>
-
-              <div className="form-group">
                 <label htmlFor="dietaryRestrictions">
                   Dietary Restrictions
                 </label>

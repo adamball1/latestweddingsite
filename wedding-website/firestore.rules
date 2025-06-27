@@ -2,6 +2,13 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
+    // Allow write access to responses collection for RSVP submissions
+    match /responses/{document} {
+      allow write: if true;
+      allow read: if false; // Only allow writes, not reads for security
+    }
+    
+    // Deny access to all other collections
     match /{document=**} {
       allow read, write: if false;
     }
