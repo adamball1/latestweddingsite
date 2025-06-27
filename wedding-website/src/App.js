@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import RSVP from "./pages/RSVP";
 import React from "react";
+import ViewResponses from "./pages/ViewResponses";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/rsvp" element={<RSVP />} />
+          <Route path="/admin" element={<ViewResponses />} />
         </Routes>
       </div>
     </Router>

@@ -5,7 +5,7 @@ service cloud.firestore {
     // Allow write access to responses collection for RSVP submissions
     match /responses/{document} {
       allow write: if true;
-      allow read: if false; // Only allow writes, not reads for security
+      allow read: if true; // Allow reads for admin view
     }
     
     // Deny access to all other collections
